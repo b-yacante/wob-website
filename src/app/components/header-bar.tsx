@@ -1,8 +1,9 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function HeaderBar({ params }: { params: { slug?: string } }) {
-  const currentPath = `/${params.slug}`;
-  console.log(params.slug);
+export default function HeaderBar() {
+  const currentPath = usePathname();
   return (
     <header className="bg-blue-600 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-10">
@@ -13,7 +14,7 @@ export default function HeaderBar({ params }: { params: { slug?: string } }) {
           <Link
             href="/news"
             className={`hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded ${
-              currentPath === "/" ? "bg-blue-800" : ""
+              currentPath === "/news" ? "bg-blue-800" : ""
             }`}
           >
             News

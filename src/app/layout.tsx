@@ -14,18 +14,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { slug: string };
 }>) {
   return (
     <html>
       <Suspense fallback={<Loading />}>
-        <body className={`${inter.className} bg-blue-500 text-white`}>
-          <HeaderBar params={params} />
-          {children}
-        </body>
+      <body
+        className={`${inter.className} h-screen w-screen bg-blue-500 text-white`}
+      >
+        <HeaderBar />
+        <div className="p-10">{children}</div>
+      </body>
       </Suspense>
     </html>
   );
