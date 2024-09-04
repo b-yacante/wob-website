@@ -3,5 +3,5 @@ export default function Games() {
     <div>
       <p>Games content</p>
     </div>
-  );
+  )
 }

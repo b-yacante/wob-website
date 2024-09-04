@@ -1,5 +1,5 @@
-import { redirect, RedirectType } from "next/navigation";
+import { redirect, RedirectType } from 'next/navigation'
 
 export default function Home() {
-  redirect("/news", RedirectType.replace);
+  redirect('/news', RedirectType.replace)
 }

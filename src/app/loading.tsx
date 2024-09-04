@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
+'use client'
+import Image from 'next/image'
 export default function Loading() {
   return (
-    <body className="bg-blue-600 h-screen w-screen grid place-items-center">
+    <body className="grid h-screen w-screen place-items-center bg-blue-600">
       <Image
         src="/vercel.svg"
         alt="Logo"
@@ -12,5 +12,5 @@ export default function Loading() {
         priority
       />
     </body>
-  );
+  )
 }
