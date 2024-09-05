@@ -6,7 +6,7 @@ import Loading from './loading'
 import HeaderBar from './components/header-bar'
 
 const roboto = Roboto({
-  weight: '500',
+  weight: '400',
   subsets: ['latin'],
 })
 

@@ -1,14 +1,17 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 import { FiInstagram, FiTwitter, FiMail } from 'react-icons/fi'
 
 export default function HeaderBar() {
   const currentPath = usePathname()
+  const [tooggleMenu, setToggleMenu] = useState(false)
 
-  function toggleMenu() {
+  function toggleMenuAction() {
     const menu = document.getElementById('mobile-menu')
     menu?.classList.toggle('hidden')
+    setToggleMenu(!tooggleMenu)
   }
   return (
     <header className="relative text-white">
@@ -18,7 +21,7 @@ export default function HeaderBar() {
           {/* Hamburger button */}
           <div className="flex items-center md:hidden">
             <button
-              onClick={toggleMenu}
+              onClick={toggleMenuAction}
               className="text-white hover:text-white active:text-gray-600"
             >
               <svg
@@ -28,9 +31,9 @@ export default function HeaderBar() {
                 viewBox="0 0 24 24"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="3"
                   d="M4 6h16M4 12h16m-16 6h7"
                 ></path>
               </svg>
@@ -42,7 +45,7 @@ export default function HeaderBar() {
             className="absolute z-10 hidden h-52 w-36 bg-black md:hidden"
           >
             <div className="grid h-full p-3 text-white">
-              <div className="">
+              <div className="font-medium">
                 <a href="#" className="block w-full py-2">
                   News
                 </a>
@@ -99,27 +102,27 @@ export default function HeaderBar() {
           href="/news"
           className="absolute grid translate-y-6 place-items-center self-center justify-self-center"
         >
-          <div className="grid h-12 w-32 place-items-center rounded border-2 border-slate-900 bg-slate-600 text-sm md:h-14 md:w-40 md:text-base lg:h-16 lg:w-44">
-            WoB Software
+          <div className="grid h-12 w-32 place-items-center rounded border-2 border-slate-900 bg-slate-600 text-sm font-semibold md:h-14 md:w-40 md:text-base lg:h-16 lg:w-44">
+            WOB SOFTWARE
           </div>
         </Link>
         {/* REDES */}
-        <nav className="col-span-3 mr-8 hidden space-x-5 justify-self-end md:flex md:items-center">
+        <nav className="col-span-3 mr-8 hidden space-x-3 justify-self-end md:flex md:items-center">
           <Link
             href="https://instagram.com"
-            className="grid h-6 w-6 place-items-center rounded text-white hover:bg-blue-800"
+            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-b text-white hover:from-[#405DE6] hover:via-[#FD1D1D] hover:to-[#FCAF45]"
           >
             <FiInstagram size={23} />
           </Link>
           <Link
             href="https://x.com"
-            className="grid h-6 w-6 place-items-center rounded text-white hover:bg-blue-800"
+            className="grid h-9 w-9 place-items-center rounded-full text-white hover:bg-[#1DA1F2]"
           >
             <FiTwitter size={23} />
           </Link>
           <Link
             href="mailto:braian.yac@gmail.com"
-            className="grid h-6 w-6 place-items-center rounded text-white hover:bg-blue-800"
+            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-b text-white hover:from-[#DB4437] hover:via-[#F4B400] hover:to-[#4285F4]"
           >
             <FiMail size={23} />
           </Link>
