@@ -8,11 +8,6 @@ export default function HeaderBar() {
   const currentPath = usePathname()
   const [tooggleMenu, setToggleMenu] = useState(false)
 
-  function toggleMenuAction() {
-    const menu = document.getElementById('mobile-menu')
-    menu?.classList.toggle('hidden')
-    setToggleMenu(!tooggleMenu)
-  }
   return (
     <header className="relative text-white">
       <div className="grid w-full grid-flow-col grid-cols-3 py-5">
@@ -21,7 +16,7 @@ export default function HeaderBar() {
           {/* Hamburger button */}
           <div className="flex items-center md:hidden">
             <button
-              onClick={toggleMenuAction}
+              onClick={() => setToggleMenu(!tooggleMenu)}
               className="text-white hover:text-white active:text-gray-600"
             >
               <svg
@@ -42,33 +37,49 @@ export default function HeaderBar() {
           {/* Menu items */}
           <div
             id="mobile-menu"
-            className="absolute z-10 hidden h-52 w-36 bg-black md:hidden"
+            className={`absolute z-20 h-64 w-40 bg-black sm:h-72 sm:w-60 sm:p-4 md:hidden rounded ${!tooggleMenu ? 'hidden' : ''}`}
           >
             <div className="grid h-full p-3 text-white">
               <div className="font-medium">
-                <a href="#" className="block w-full py-2">
+                <a href="/news" className="block w-full py-2 sm:p-4">
                   News
                 </a>
-                <a href="#" className="block w-full py-2">
+                <a href="/games" className="block w-full py-2 sm:p-4">
                   Games
                 </a>
-                <a href="#" className="block w-full py-2">
+                <a href="/about" className="block w-full py-2 sm:p-4">
                   About
                 </a>
               </div>
               <div className="flex items-end justify-around text-center">
-                <a href="#" className="block w-full rounded p-2">
+                <a
+                  href="#"
+                  className="grid w-full place-items-center rounded p-2"
+                >
                   <FiInstagram size={20} />
                 </a>
-                <a href="#" className="block w-full rounded p-2">
+                <a
+                  href="#"
+                  className="grid w-full place-items-center rounded p-2"
+                >
                   <FiTwitter size={20} />
                 </a>
-                <a href="#" className="block w-full rounded p-2">
+                <a
+                  href="#"
+                  className="grid w-full place-items-center rounded p-2"
+                >
                   <FiMail size={20} />
                 </a>
               </div>
             </div>
           </div>
+          {/* Overlay */}
+          {tooggleMenu && (
+            <div
+              onClick={() => setToggleMenu(false)}
+              className={`fixed left-0 top-0 z-10 h-screen w-screen md:hidden`}
+            ></div>
+          )}
           {/* Desktop items */}
           <div className="hidden space-x-1 text-sm md:flex lg:space-x-3 lg:text-base">
             <Link
