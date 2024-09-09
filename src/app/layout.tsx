@@ -4,6 +4,7 @@ import './globals.css'
 import { Suspense } from 'react'
 import Loading from './loading'
 import HeaderBar from './components/header-bar'
+import WoBFooter from './components/footer-wob'
 
 const roboto = Roboto({
   weight: '400',
@@ -24,10 +25,13 @@ export default function RootLayout({
     <html>
       <Suspense fallback={<Loading />}>
         <body
-          className={`${roboto.className} h-screen w-screen bg-blue-500 text-white md:px-28 lg:px-44 xl:px-64`}
+          className={`${roboto.className} flex min-h-screen w-screen flex-col bg-blue-500 text-white`}
         >
           <HeaderBar />
-          <div className="px-6 md:px-7 lg:px-8 xl:px-9">{children}</div>
+          <main className="flex-grow px-6 md:px-28 lg:px-44 xl:px-64">
+            {children}
+          </main>
+          <WoBFooter />
         </body>
       </Suspense>
     </html>

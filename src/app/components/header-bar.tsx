@@ -9,7 +9,7 @@ export default function HeaderBar() {
   const [tooggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <header className="relative text-white">
+    <header className="relative text-white md:px-6 lg:px-9">
       <div className="grid w-full grid-flow-col grid-cols-3 py-5">
         {/* NAV */}
         <nav className="ml-5 justify-self-start text-sm lg:ml-8">
@@ -37,7 +37,7 @@ export default function HeaderBar() {
           {/* Menu items */}
           <div
             id="mobile-menu"
-            className={`absolute z-20 h-64 w-40 bg-black sm:h-72 sm:w-60 sm:p-4 md:hidden rounded ${!tooggleMenu ? 'hidden' : ''}`}
+            className={`absolute z-20 h-64 w-40 rounded bg-black sm:h-72 sm:w-60 sm:p-4 md:hidden ${!tooggleMenu ? 'hidden' : ''}`}
           >
             <div className="grid h-full p-3 text-white">
               <div className="font-medium">
