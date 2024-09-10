@@ -2,7 +2,7 @@ import { FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi'
 
 export default async function WoBFooter() {
   return (
-    <footer className="bg-gray-800 py-6 text-white">
+    <footer className="bg-dark py-6 text-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* <!-- Flex Container --> */}
         <div className="flex flex-col items-center justify-between md:flex-row">

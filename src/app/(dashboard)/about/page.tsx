@@ -5,7 +5,9 @@ export default async function About() {
   return (
     <div className="grid place-items-center">
       {/* LOGO */}
-      <div className="h-32 w-full bg-red-400 sm:h-40 md:h-44 lg:h-52 xl:h-64"></div>
+      <div className="grid h-32 w-full place-items-center bg-complement border-dark rounded-lg border-4 sm:h-40 md:h-44 lg:h-52 xl:h-64">
+        <img src="/wob.svg"  alt="WoB Logo" className='w-32 h-32 md:w-36 md:h-36 lg:w-48 lg:h-48 xl:w-52 xl:h-52 2xl:w-64 2xl:h-64 object-contain' />
+      </div>
       {/* CONTENT */}
       <div className="py-12">
         <div className="space-y-5 md:text-lg">

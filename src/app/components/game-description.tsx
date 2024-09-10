@@ -15,16 +15,16 @@ export default function GameDescriptionComponent(props: GameDescriptionProps) {
         <img className="rounded-md" src={props.imgUrl} alt="" />
       </div>
       <div className="space-y-2">
-        <h1 className="text-center text-xl font-bold text-slate-400 lg:text-2xl">
+        <h1 className="text-dark text-center text-xl font-bold lg:text-2xl">
           {props.title}
         </h1>
         <p className="pb-16 text-sm md:text-base">{props.content}</p>
       </div>
       <a
         href={props.href}
-        className="absolute bottom-4 right-4 grid h-12 w-12 place-items-center rounded-full bg-red-500 shadow shadow-red-700"
+        className="absolute bottom-4 right-4 grid h-12 w-12 place-items-center rounded-full bg-secondary shadow shadow-red-700"
       >
-        <FiPlay className="translate-x-0.5 text-xl hover:scale-110" />
+        <FiPlay className="text-light translate-x-0.5 text-xl hover:scale-110" />
       </a>
     </div>
   )

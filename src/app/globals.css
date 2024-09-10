@@ -38,7 +38,7 @@ body {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  color: #fff;
+  color: #80d6ff;
 }
   .loader:before,
   .loader:after {
@@ -54,7 +54,7 @@ body {
     animation: 1s spin linear infinite;
   }
   .loader:after {
-    color: #FF3D00;
+    color: #f06868;
     transform: rotateY(70deg);
     animation-delay: .4s;
   }

@@ -25,10 +25,10 @@ export default function RootLayout({
     <html>
       <Suspense fallback={<Loading />}>
         <body
-          className={`${roboto.className} flex min-h-screen w-screen flex-col bg-blue-500 text-white`}
+          className={`${roboto.className} flex min-h-screen w-screen flex-col bg-light text-dark`}
         >
           <HeaderBar />
-          <main className="flex-grow px-6 md:px-28 lg:px-44 xl:px-64">
+          <main className="flex-grow px-6 md:px-28 lg:px-44 xl:px-64 2xl:px-80">
             {children}
           </main>
           <WoBFooter />
